@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS xuan24;
+USE xuan24;
+DROP TABLE IF EXISTS blog_user;
+CREATE TABLE blog_user (
+  userId INT AUTO_INCREMENT,
+  userName VARCHAR (50) UNIQUE NOT NULL,
+  email VARCHAR(50) UNIQUE NOT NULL,
+  gender VARCHAR(10),
+  birthday DATE,
+  registerTime DATETIME NOT NULL,
+  PRIMARY KEY (userID)
+);

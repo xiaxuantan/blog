@@ -1,0 +1,32 @@
+package com.xuan24.blog.mappers;
+
+import com.xuan24.blog.models.User;
+import org.apache.ibatis.annotations.*;
+
+
+@Mapper
+public interface UserMapper {
+
+    @Insert("INSERT INTO blog_user(" +
+            "userName," +
+            "email," +
+            "gender," +
+            "birthday," +
+            "registerTime) VALUES (" +
+            "#{userName}," +
+            "#{email}," +
+            "#{gender}," +
+            "#{birthday}," +
+            "#{registerTime})")
+    void insertUser(User user);
+
+    @Update("UPDATE blog_user SET gender=#{gender}, " +
+            "birthday=#{birthday} WHERE userName=#{userName}")
+    void updateUser(User user);
+
+    @Select("SELECT * FROM blog_user WHERE userName = #{userName}")
+    User findUserByName(String userName);
+
+    @Delete("DELETE FROM blog_user WHERE userName = #{userName}")
+    void deleteUserByName(String userName);
+}
