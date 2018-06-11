@@ -1,6 +1,6 @@
-package com.xuan24.blog.mappers;
+package com.xuan24.blog.mapper;
 
-import com.xuan24.blog.models.User;
+import com.xuan24.blog.model.User;
 import org.apache.ibatis.annotations.*;
 
 

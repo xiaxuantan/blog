@@ -1,7 +1,7 @@
-package com.xuan24.blog.models;
+package com.xuan24.blog.model;
 
 
-import com.xuan24.blog.enums.UserGender;
+import com.xuan24.blog.type.UserGender;
 
 import java.time.LocalDateTime;
 

@@ -1,4 +1,4 @@
-package com.xuan24.blog.enums;
+package com.xuan24.blog.type;
 
 public enum UserGender {
     MALE, FEMALE
