@@ -1,13 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-class Hello extends React.Component {
-    render() {
-        return <p>Hello, world!</p>;
-    }
-}
+import UserSpace from './user-space';
 
 ReactDOM.render(
-    <Hello />,
-    document.getElementById('app')
+    <UserSpace/>,
+    document.getElementById('user')
 );
