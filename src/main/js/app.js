@@ -3,6 +3,19 @@ import ReactDOM from 'react-dom'
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import UserSpace from './user-space'
 
+import 'bootstrap/dist/css/bootstrap.css'
+import {Navbar} from 'react-bootstrap'
+
+const Navigation = () => (
+    <Navbar>
+        <Navbar.Header>
+            <Navbar.Brand>
+                <a href="#">Xuan24's Blog</a>
+            </Navbar.Brand>
+        </Navbar.Header>
+    </Navbar>
+);
+
 
 const Home = () => (
     <h1>Hello World!</h1>
@@ -10,6 +23,7 @@ const Home = () => (
 
 const App = () => (
     <div>
+        <Navigation/>
         <Content/>
     </div>
 );

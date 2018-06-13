@@ -4,8 +4,7 @@ class UserSpace extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {user: null};
-        console.log(props)
+        this.state = {'user': null};
     }
 
     componentDidMount() {
@@ -17,7 +16,6 @@ class UserSpace extends React.Component {
 
         client({path: path}).then(response => {
             this.setState({user: response.entity});
-            console.log(response);
         });
     }
 
