@@ -1,6 +1,7 @@
 package com.xuan24.blog.model;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.xuan24.blog.type.UserGender;
 
 import java.time.LocalDateTime;
@@ -10,7 +11,9 @@ public class User {
     private String userName;
     private String email;
     private UserGender gender;
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDateTime birthday;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime registerTime;
 
     public User() {

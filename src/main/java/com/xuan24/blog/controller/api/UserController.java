@@ -1,5 +1,6 @@
 package com.xuan24.blog.controller.api;
 
+import com.xuan24.blog.model.User;
 import com.xuan24.blog.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,9 +22,8 @@ public class UserController {
 
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
-    public String getUser(@RequestParam String name) {
-        var user = userService.getUser(name);
-        return user.toString();
+    public User getUser(@RequestParam String name) {
+        return userService.getUser(name);
     }
 
 }
