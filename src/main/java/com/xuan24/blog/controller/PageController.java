@@ -6,14 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class PageController {
 
-    @RequestMapping("/")
+    @RequestMapping({"/", "/space/*", "/posts", "/about", "/photos"})
     public String index() {
         return "index";
-    }
-
-    @RequestMapping("/space/*")
-    public String space() {
-        return index();
     }
 
 }
