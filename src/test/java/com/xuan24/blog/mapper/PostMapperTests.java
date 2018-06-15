@@ -30,7 +30,7 @@ public class PostMapperTests {
     public void test000InsertPost() {
         Post post = new Post();
         post.setTitle(testTitle);
-        post.setPostTime(testPostTime);
+        post.setPublishedTime(testPostTime);
         post.setLastModifiedTime(testPostTime);
         post.setBodyKey(testBodyKey);
         postMapper.insertPost(post);
@@ -40,7 +40,7 @@ public class PostMapperTests {
     @Test
     public void test001FindPostById() {
         Post post = postMapper.findPostById(testPostId);
-        Assert.assertEquals(post.getLastModifiedTime(), post.getPostTime());
+        Assert.assertEquals(post.getLastModifiedTime(), post.getPublishedTime());
         Assert.assertEquals(post.getTitle(), testTitle);
         Assert.assertEquals(post.getBodyKey(), testBodyKey);
         Assert.assertTrue(post.isVisible());
@@ -51,19 +51,16 @@ public class PostMapperTests {
         Post post = postMapper.findPostById(testPostId);
 
         var newTitle = "My Updated Post";
-        var newBodyKey = "posts/new.md";
         var current = LocalDateTime.now();
 
         post.setLastModifiedTime(current);
         post.setVisible(false);
         post.setTitle(newTitle);
-        post.setBodyKey(newBodyKey);
 
         postMapper.updatePost(post);
         post = postMapper.findPostById(testPostId);
 
         Assert.assertFalse(post.isVisible());
-        Assert.assertEquals(post.getBodyKey(), newBodyKey);
         Assert.assertEquals(post.getTitle(), newTitle);
     }
 

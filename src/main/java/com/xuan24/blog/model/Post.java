@@ -8,7 +8,7 @@ public class Post {
     private int postId;
     private String title;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private LocalDateTime postTime;
+    private LocalDateTime publishedTime;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime lastModifiedTime;
     private String bodyKey;
@@ -18,7 +18,7 @@ public class Post {
         return "Post{" +
                 "postId=" + postId +
                 ", title='" + title + '\'' +
-                ", postTime=" + postTime +
+                ", publishedTime=" + publishedTime +
                 ", lastModifiedTime=" + lastModifiedTime +
                 ", bodyKey='" + bodyKey + '\'' +
                 ", visible=" + visible +
@@ -62,12 +62,12 @@ public class Post {
         this.title = title;
     }
 
-    public LocalDateTime getPostTime() {
-        return postTime;
+    public LocalDateTime getPublishedTime() {
+        return publishedTime;
     }
 
-    public void setPostTime(LocalDateTime postTime) {
-        this.postTime = postTime;
+    public void setPublishedTime(LocalDateTime publishedTime) {
+        this.publishedTime = publishedTime;
     }
 
     public LocalDateTime getLastModifiedTime() {

@@ -22,4 +22,11 @@ public class PostServiceImpl implements PostService {
     public List<Post> getAllPosts() {
         return postMapper.getAllPosts();
     }
+
+    @Override
+    public List<Post> getPostByPage(int page) {
+        int offset = page == 0 ? 0 : (page -1) * 10;
+        int size = 20;
+        return postMapper.getPostsByPage(offset, size);
+    }
 }

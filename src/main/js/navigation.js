@@ -5,7 +5,7 @@ const Navigation = () => (
     <Navbar inverse staticTop collapseOnSelect>
         <Navbar.Header>
             <Navbar.Brand>
-                <a href="/">Xuan24's Blog</a>
+                <a href="/">Xiaxuan (Peter) Tan</a>
             </Navbar.Brand>
             <Navbar.Toggle />
         </Navbar.Header>
@@ -20,12 +20,15 @@ const Navigation = () => (
                 <NavItem eventKey={3} href="/about">
                     About
                 </NavItem>
+                <NavItem eventKey={4} href="/cv">
+                    CV
+                </NavItem>
             </Nav>
             <Nav pullRight>
-                <NavItem eventKey={1} href="/">
+                <NavItem eventKey={1} href="/sign-in">
                     <span><Glyphicon glyph="log-in" /></span> Sign In
                 </NavItem>
-                <NavItem eventKey={2} href="/">
+                <NavItem eventKey={2} href="/sign-up">
                     Sign Up
                 </NavItem>
             </Nav>

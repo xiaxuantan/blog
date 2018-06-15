@@ -4,7 +4,7 @@ class UserSpace extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {'user': null};
+        this.state = {user: null};
     }
 
     componentDidMount() {
@@ -26,26 +26,32 @@ class UserSpace extends React.Component {
             )
         } else {
             return (
-                <table>
-                    <tbody>
-                    <tr>
-                        <th>Name</th>
-                        <td>{this.state.user.userName}</td>
-                    </tr>
-                    <tr>
-                        <th>Email</th>
-                        <td>{this.state.user.email}</td>
-                    </tr>
-                    <tr>
-                        <th>Gender</th>
-                        <td>{this.state.user.gender}</td>
-                    </tr>
-                    <tr>
-                        <th>Birthday</th>
-                        <td>{this.state.user.birthday}</td>
-                    </tr>
-                    </tbody>
-                </table>
+                <div className="container">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <th>Name</th>
+                            <td>{this.state.user.userName}</td>
+                        </tr>
+                        <tr>
+                            <th>Email</th>
+                            <td>{this.state.user.email}</td>
+                        </tr>
+                        <tr>
+                            <th>Gender</th>
+                            <td>{this.state.user.gender}</td>
+                        </tr>
+                        <tr>
+                            <th>Birthday</th>
+                            <td>{this.state.user.birthday}</td>
+                        </tr>
+                        <tr>
+                            <th>RegisterTime</th>
+                            <td>{this.state.user.registerTime}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
             )
         }
     }

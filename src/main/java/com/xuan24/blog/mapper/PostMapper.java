@@ -10,11 +10,11 @@ public interface PostMapper {
 
     @Insert("INSERT INTO blog_post(" +
             "title," +
-            "postTime," +
+            "publishedTime," +
             "bodyKey," +
             "lastModifiedTime) VALUES (" +
             "#{title}," +
-            "#{postTime}," +
+            "#{publishedTime}," +
             "#{bodyKey}," +
             "#{lastModifiedTime})")
     @Options(useGeneratedKeys=true, keyProperty="postId")
@@ -34,6 +34,6 @@ public interface PostMapper {
     List<Post> getAllPosts();
 
     @Select("SELECT * FROM blog_post ORDER BY postId DESC LIMIT #{offset}, #{size}")
-    List<Post> getPostsByPage(int offset, int size);
+    List<Post> getPostsByPage(@Param("offset") int offset, @Param("size") int size);
 
 }

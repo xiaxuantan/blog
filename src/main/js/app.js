@@ -6,6 +6,7 @@ import UserSpace from './user-space'
 import Navigation from './navigation'
 import PostList from './post-list'
 import Home from './home'
+import Footer from "./footer"
 
 import 'bootstrap/dist/css/bootstrap.css'
 
@@ -14,6 +15,7 @@ const App = () => (
     <div>
         <Navigation/>
         <Content/>
+        <Footer/>
     </div>
 );
 
