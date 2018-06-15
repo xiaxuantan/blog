@@ -2,6 +2,7 @@ package com.xuan24.blog.controller;
 
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.core.io.InputStreamSource;
 import org.springframework.http.MediaType;
@@ -15,11 +16,13 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class AssetController {
 
+    @Value(value="${s3.bucket.name}")
+    private String bucket_name;
+
     @ResponseBody
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<InputStreamSource> fetchAsset(@PathVariable String type, @PathVariable String name) {
         final AmazonS3 s3 = AmazonS3ClientBuilder.defaultClient();
-        var bucket_name = "xuan24-blog-assets";
         var key = type + "/" + name;
         var o = s3.getObject(bucket_name, key);
         var s3is = o.getObjectContent();
