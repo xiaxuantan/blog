@@ -12,16 +12,18 @@ public interface UserMapper {
             "email," +
             "gender," +
             "birthday," +
+            "profile," +
             "registerTime) VALUES (" +
             "#{userName}," +
             "#{email}," +
             "#{gender}," +
             "#{birthday}," +
+            "#{profile}," +
             "#{registerTime})")
     void insertUser(User user);
 
     @Update("UPDATE blog_user SET gender=#{gender}, " +
-            "birthday=#{birthday} WHERE userName=#{userName}")
+            "birthday=#{birthday}, profile=#{profile} WHERE userName=#{userName}")
     void updateUser(User user);
 
     @Select("SELECT * FROM blog_user WHERE userName = #{userName}")

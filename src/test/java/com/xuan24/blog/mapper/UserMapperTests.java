@@ -21,6 +21,9 @@ public class UserMapperTests {
 
     @Autowired
     private UserMapper userMapper;
+
+    private static User user;
+
     private String testUserName = "June";
     private LocalDateTime testRegisterTime = LocalDateTime.now();
     private LocalDateTime testBirthday = LocalDateTime.of(1995, 6, 24, 0, 0, 0);
@@ -34,7 +37,12 @@ public class UserMapperTests {
 
     @Test
     public void test001InsertUser() {
-        User user = new User(testUserName, testEmail, testGender, testBirthday, testRegisterTime);
+        User user = new User();
+        user.setUserName(testUserName);
+        user.setEmail(testEmail);
+        user.setGender(testGender);
+        user.setBirthday(testBirthday);
+        user.setRegisterTime(testRegisterTime);
         userMapper.insertUser(user);
     }
 
@@ -45,8 +53,7 @@ public class UserMapperTests {
         Assert.assertEquals(user.getEmail(), testEmail);
         Assert.assertEquals(user.getGender(), testGender);
         Assert.assertEquals(user.getBirthday(), testBirthday);
-        // Mysql can not save nano seconds in type datetime
-        // Assert.assertEquals(user.getRegisterTime(), testRegisterTime);
+        Assert.assertEquals(user.getRegisterTime().getDayOfYear(), testRegisterTime.getDayOfYear());
     }
 
     @Test
@@ -55,14 +62,17 @@ public class UserMapperTests {
 
         var newBirthday = LocalDateTime.of(1995, 9, 8, 0, 0, 0);
         var newGender = UserGender.FEMALE;
+        var newProfile = "/asset/new_profile.jpg";
 
         user.setGender(UserGender.FEMALE);
         user.setBirthday(newBirthday);
+        user.setProfile(newProfile);
         userMapper.updateUser(user);
 
         var updatedUser = userMapper.findUserByName(testUserName);
         Assert.assertEquals(updatedUser.getBirthday(), newBirthday);
         Assert.assertEquals(updatedUser.getGender(), newGender);
+        Assert.assertEquals(updatedUser.getProfile(), newProfile);
     }
 
 }
