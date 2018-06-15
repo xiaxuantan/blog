@@ -11,7 +11,7 @@ public class User {
     private String userName;
     private String email;
     private UserGender gender;
-    private String profile;
+    private String avatarKey;
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDateTime birthday;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
@@ -60,19 +60,6 @@ public class User {
         this.birthday = birthday;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "userId=" + userId +
-                ", userName='" + userName + '\'' +
-                ", email='" + email + '\'' +
-                ", gender=" + gender +
-                ", profile='" + profile + '\'' +
-                ", birthday=" + birthday +
-                ", registerTime=" + registerTime +
-                '}';
-    }
-
     public LocalDateTime getRegisterTime() {
         return registerTime;
     }
@@ -81,13 +68,24 @@ public class User {
         this.registerTime = registerTime;
     }
 
-    public String getProfile() {
-        return profile;
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId=" + userId +
+                ", userName='" + userName + '\'' +
+                ", email='" + email + '\'' +
+                ", gender=" + gender +
+                ", avatarKey='" + avatarKey + '\'' +
+                ", birthday=" + birthday +
+                ", registerTime=" + registerTime +
+                '}';
     }
 
-    public void setProfile(String profile) {
-        this.profile = profile;
+    public String getAvatarKey() {
+        return avatarKey;
     }
 
-
+    public void setAvatarKey(String avatarKey) {
+        this.avatarKey = avatarKey;
+    }
 }

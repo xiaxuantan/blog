@@ -21,9 +21,6 @@ public class UserMapperTests {
 
     @Autowired
     private UserMapper userMapper;
-
-    private static User user;
-
     private String testUserName = "June";
     private LocalDateTime testRegisterTime = LocalDateTime.now();
     private LocalDateTime testBirthday = LocalDateTime.of(1995, 6, 24, 0, 0, 0);
@@ -62,17 +59,17 @@ public class UserMapperTests {
 
         var newBirthday = LocalDateTime.of(1995, 9, 8, 0, 0, 0);
         var newGender = UserGender.FEMALE;
-        var newProfile = "/asset/new_profile.jpg";
+        var newAvatarKey = "avatar/new.jpg";
 
         user.setGender(UserGender.FEMALE);
         user.setBirthday(newBirthday);
-        user.setProfile(newProfile);
+        user.setAvatarKey(newAvatarKey);
         userMapper.updateUser(user);
 
         var updatedUser = userMapper.findUserByName(testUserName);
         Assert.assertEquals(updatedUser.getBirthday(), newBirthday);
         Assert.assertEquals(updatedUser.getGender(), newGender);
-        Assert.assertEquals(updatedUser.getProfile(), newProfile);
+        Assert.assertEquals(updatedUser.getAvatarKey(), newAvatarKey);
     }
 
 }

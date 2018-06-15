@@ -11,15 +11,29 @@ public class Post {
     private LocalDateTime postTime;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime lastModifiedTime;
-    private boolean visible;
-    private String content;
+    private String bodyKey;
 
-    public Post(String title, LocalDateTime postTime, LocalDateTime lastModifiedTime, String content) {
-        this.title = title;
-        this.postTime = postTime;
-        this.lastModifiedTime = lastModifiedTime;
-        this.content = content;
+    @Override
+    public String toString() {
+        return "Post{" +
+                "postId=" + postId +
+                ", title='" + title + '\'' +
+                ", postTime=" + postTime +
+                ", lastModifiedTime=" + lastModifiedTime +
+                ", bodyKey='" + bodyKey + '\'' +
+                ", visible=" + visible +
+                '}';
     }
+
+    public String getBodyKey() {
+        return bodyKey;
+    }
+
+    public void setBodyKey(String bodyKey) {
+        this.bodyKey = bodyKey;
+    }
+
+    private boolean visible;
 
     public boolean isVisible() {
         return visible;
@@ -64,23 +78,4 @@ public class Post {
         this.lastModifiedTime = lastModifiedTime;
     }
 
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    @Override
-    public String toString() {
-        return "Post{" +
-                "postId=" + postId +
-                ", title='" + title + '\'' +
-                ", postTime=" + postTime +
-                ", lastModifiedTime=" + lastModifiedTime +
-                ", visible=" + visible +
-                ", content='" + content + '\'' +
-                '}';
-    }
 }

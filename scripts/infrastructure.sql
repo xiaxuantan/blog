@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS blog_user (
   gender VARCHAR(10),
   birthday DATE,
   registerTime DATETIME NOT NULL,
-  profile VARCHAR(255),
+  avatarKey VARCHAR(255),
   PRIMARY KEY (userId)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS blog_post (
   title VARCHAR(255) NOT NULL,
   postTime DATETIME NOT NULL,
   lastModifiedTime DATETIME NOT NULL,
-  content TEXT NOT NULL,
   visible TINYINT(1) NOT NULL DEFAULT 1,
+  bodyKey VARCHAR(255) NOT NULL,
   PRIMARY KEY (postId)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

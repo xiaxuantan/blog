@@ -21,14 +21,18 @@ public class PostMapperTests {
     @Autowired
     private PostMapper postMapper;
     private String testTitle = "My Test Post";
-    private String testContent = "# Hello World!";
     private LocalDateTime testPostTime = LocalDateTime.now();
+    private String testBodyKey = "posts/test.md";
 
     private static int testPostId;
 
     @Test
     public void test000InsertPost() {
-        Post post = new Post(testTitle, testPostTime, testPostTime, testContent);
+        Post post = new Post();
+        post.setTitle(testTitle);
+        post.setPostTime(testPostTime);
+        post.setLastModifiedTime(testPostTime);
+        post.setBodyKey(testBodyKey);
         postMapper.insertPost(post);
         testPostId = post.getPostId();
     }
@@ -38,7 +42,7 @@ public class PostMapperTests {
         Post post = postMapper.findPostById(testPostId);
         Assert.assertEquals(post.getLastModifiedTime(), post.getPostTime());
         Assert.assertEquals(post.getTitle(), testTitle);
-        Assert.assertEquals(post.getContent(), testContent);
+        Assert.assertEquals(post.getBodyKey(), testBodyKey);
         Assert.assertTrue(post.isVisible());
     }
 
@@ -46,20 +50,20 @@ public class PostMapperTests {
     public void test002UpdatePostById() {
         Post post = postMapper.findPostById(testPostId);
 
-        var newContent = "# Hello Universe";
         var newTitle = "My Updated Post";
+        var newBodyKey = "posts/new.md";
         var current = LocalDateTime.now();
 
-        post.setContent(newContent);
         post.setLastModifiedTime(current);
         post.setVisible(false);
         post.setTitle(newTitle);
+        post.setBodyKey(newBodyKey);
 
-        postMapper.updatePostBody(post);
+        postMapper.updatePost(post);
         post = postMapper.findPostById(testPostId);
 
         Assert.assertFalse(post.isVisible());
-        Assert.assertEquals(post.getContent(), newContent);
+        Assert.assertEquals(post.getBodyKey(), newBodyKey);
         Assert.assertEquals(post.getTitle(), newTitle);
     }
 
