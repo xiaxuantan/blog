@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
+import CodeBlock from './codeblock'
 
 const qs = require('query-string');
 
@@ -7,7 +8,7 @@ class Post extends React.Component {
 
     constructor(props) {
         super(props);
-        let templateBody = "**Rendering document. Please wait...**";
+        let templateBody = "**Fetching and rendering document. Please wait...**";
         this.state = {post: null, body: templateBody};
         this.queryParams = qs.parse(this.props.location.search)
     }
@@ -36,7 +37,7 @@ class Post extends React.Component {
             <div className="container">
                 <div className="row">
                     <div className="col-xs-8 col-md-8">
-                        <ReactMarkdown source={this.state.body}/>
+                        <ReactMarkdown source={this.state.body} renderers={{code: CodeBlock}}/>
                     </div>
                 </div>
             </div>
