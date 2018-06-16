@@ -29,4 +29,9 @@ public class PostServiceImpl implements PostService {
         int size = 20;
         return postMapper.getPostsByPage(offset, size);
     }
+
+    @Override
+    public Post findPostById(int postId) {
+        return postMapper.findPostById(postId);
+    }
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from "react-router-dom";
 import {Table} from "react-bootstrap";
 
 class PostList extends React.Component {
@@ -17,11 +18,10 @@ class PostList extends React.Component {
         // make sure the value of page is within a proper range
         page = page < 1 ? 1 : page;
         page = page > 10000 ? 10000 : page;
-        let path = "/api/post?page=" + page;
+        let path = "/api/post?type=page&page=" + page;
 
         client({path: path}).then(response => {
             this.setState({postListItems: response.entity});
-            console.log(this.state.postListItems);
         });
     }
 
@@ -51,10 +51,13 @@ class PostList extends React.Component {
 
 class PostListItem extends React.Component {
     render() {
+        let dest = '/post?id=';
         return (
             <tr className="row">
                 <td className="col-xs-8 col-md-8">
-                    <a href={"/post/" + this.props.postListItem.postId}>{this.props.postListItem.title}</a>
+                    <Link to={dest + this.props.postListItem.postId}>
+                        {this.props.postListItem.title}
+                    </Link>
                 </td>
                 <td className="col-xs-2 col-md-2">{this.props.postListItem.publishedTime}</td>
                 <td className="col-xs-2 col-md-2">{this.props.postListItem.lastModifiedTime}</td>

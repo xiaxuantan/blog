@@ -8,7 +8,7 @@ const Home = () => (
             <Jumbotron>
                 <h1>Welcome!</h1>
                 <p>
-                    This site is under construction.
+                    I am Xiaxuan (Peter) Tan. I am a junior software engineer. I have a broad range of interests including back-end development, front-end developement, DevOps, distributed system and big data.
                 </p>
                 <p>
                     <Button bsStyle="primary">Learn more</Button>

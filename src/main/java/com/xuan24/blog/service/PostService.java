@@ -8,5 +8,6 @@ public interface PostService {
 
     List<Post> getAllPosts();
     List<Post> getPostByPage(int page);
+    Post findPostById(int postId);
 
 }

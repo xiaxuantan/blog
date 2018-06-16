@@ -22,16 +22,23 @@ public class PostController {
         this.postService = postService;
     }
 
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET, params = "type=page")
     @ResponseBody
     public List<Post> getPostsByPage(@RequestParam int page) {
         return postService.getPostByPage(page);
     }
 
-    @RequestMapping(value = "/all", method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET, params = "type=single")
+    @ResponseBody
+    public Post getPostById(@RequestParam int id) {
+        return postService.findPostById(id);
+    }
+
+    @RequestMapping(method = RequestMethod.GET, params = "type=all")
     @ResponseBody
     public List<Post> getAllPosts() {
         return postService.getAllPosts();
     }
+
 
 }
