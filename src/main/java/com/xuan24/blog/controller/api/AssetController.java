@@ -1,4 +1,4 @@
-package com.xuan24.blog.controller;
+package com.xuan24.blog.controller.api;
 
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
@@ -11,12 +11,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 
-@RequestMapping("/asset/{type}/{name}")
+@RequestMapping("/api/asset/{type}/{name}")
 @CrossOrigin("*")
 @Controller
 public class AssetController {
 
-    @Value(value="${s3.bucket.name}")
+    @Value(value = "${s3.bucket.name}")
     private String bucket_name;
 
     @ResponseBody

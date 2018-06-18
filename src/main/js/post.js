@@ -1,6 +1,5 @@
 import React from 'react'
-import ReactMarkdown from 'react-markdown'
-import CodeBlock from './codeblock'
+import Markdown from './markdown'
 
 const qs = require('query-string');
 
@@ -23,8 +22,9 @@ class Post extends React.Component {
         client({path: path}).then(response => {
             this.setState({post: response.entity});
             if (this.state.post) {
-                let bodyPath = "/asset/" + this.state.post.bodyKey;
+                let bodyPath = "/api/asset/" + this.state.post.bodyKey;
                 client({path: bodyPath}).then(response => {
+                    console.log(response.entity);
                     this.setState({body: response.entity})
                 })
             }
@@ -37,7 +37,7 @@ class Post extends React.Component {
             <div className="container">
                 <div className="row">
                     <div className="col-xs-8 col-md-8">
-                        <ReactMarkdown source={this.state.body} renderers={{code: CodeBlock}}/>
+                        <Markdown source={this.state.body}/>
                     </div>
                 </div>
             </div>

@@ -2,12 +2,15 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
 
-import Userspace from './userspace'
+import UserSpace from './user-space'
 import Navigation from './navigation'
-import PostList from './postlist'
 import Post from './post'
+import PostList from './post-list'
+import PostEditor from './post-editor'
 import Home from './home'
 import Footer from "./footer"
+import Milestone from './milestone'
+
 
 import 'bootstrap/dist/css/bootstrap.css'
 
@@ -25,9 +28,11 @@ const App = () => (
 const Content = () => (
     <Switch>
         <Route exact path='/' component={Home}/>
-        <Route path='/space/:name' component={Userspace}/>
+        <Route path='/space/:name' component={UserSpace}/>
         <Route path='/posts' component={PostList}/>
-        <Route path='/post' component={Post}/>
+        <Route path='/post/edit' component={PostEditor}/>
+        <Route exact path='/post' component={Post}/>
+        <Route path='/milestones' component={Milestone}/>
     </Switch>
 );
 

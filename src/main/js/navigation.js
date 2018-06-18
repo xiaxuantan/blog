@@ -23,6 +23,9 @@ const Navigation = () => (
                 <NavItem eventKey={4} href="/cv">
                     CV
                 </NavItem>
+                <NavItem eventKey={5} href="/milestones">
+                    Milestones
+                </NavItem>
             </Nav>
             <Nav pullRight>
                 <NavItem eventKey={1} href="/sign-in">

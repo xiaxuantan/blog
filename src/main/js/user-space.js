@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Userspace extends React.Component {
+class UserSpace extends React.Component {
 
     constructor(props) {
         super(props);
@@ -58,4 +58,4 @@ class Userspace extends React.Component {
 
 }
 
-export default Userspace;
+export default UserSpace;
