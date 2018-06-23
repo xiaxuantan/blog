@@ -24,7 +24,7 @@ class Markdown extends React.Component {
 
     render() {
         let text = md.render(this.props.source)
-            .replace('<table>', '<table class="table table-bordered">');
+            .replace('<table>', '<table class="table table-striped">');
         return (
             <div dangerouslySetInnerHTML={{__html: text}}>
             </div>

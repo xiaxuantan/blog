@@ -7,7 +7,7 @@ const Navigation = () => (
             <Navbar.Brand>
                 <a href="/">Xiaxuan (Peter) Tan</a>
             </Navbar.Brand>
-            <Navbar.Toggle />
+            <Navbar.Toggle/>
         </Navbar.Header>
         <Navbar.Collapse>
             <Nav>
@@ -29,7 +29,7 @@ const Navigation = () => (
             </Nav>
             <Nav pullRight>
                 <NavItem eventKey={1} href="/sign-in">
-                    <span><Glyphicon glyph="log-in" /></span> Sign In
+                    <span><Glyphicon glyph="log-in"/></span> Sign In
                 </NavItem>
                 <NavItem eventKey={2} href="/sign-up">
                     Sign Up

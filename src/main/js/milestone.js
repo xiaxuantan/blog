@@ -11,10 +11,13 @@ const milestones = `
 | Date           | Notes                                                        |
 | -------------- | ------------------------------------------------------------ |
 | **2018–06-17** | Finish a demo that representing blog (but the admin has to insert records into database manually) |
+| **2018–06-23** | Finish a two-screen markdown editor; allow seeing rendered result real-time |
 
 ## Plans
 
-:x: Finish a markdown editor that I can get rid of database operations 
+---
+
+:o: Finish a markdown editor that I can get rid of database operations (Finished on 2018-06-23) 
 
 :x: Learn GraphQL for future refactoring
 `;

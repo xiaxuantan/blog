@@ -16,12 +16,10 @@ import 'bootstrap/dist/css/bootstrap.css'
 
 
 const App = () => (
-    <div>
+    <div className="full-height">
         <Navigation/>
-        <div style={{marginBottom: "70px"}}>
-            <Content/>
-        </div>
-        <Footer/>
+        <div className="content"><Content/></div>
+        <div className="footer"><Footer/></div>
     </div>
 );
 

@@ -1,0 +1,19 @@
+html,
+body,
+#root,
+.full-height {
+    height: 100%;
+}
+
+.footer {
+    height: 71px;
+}
+
+.content {
+    height: calc(95% - 51px - 71px);
+}
+
+.edit-screen {
+    padding-left: 15px;
+    padding-right: 15px;
+}
