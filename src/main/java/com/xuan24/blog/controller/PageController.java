@@ -8,14 +8,11 @@ public class PageController {
 
     @RequestMapping({
             "/",
-            "/space/*",
             "/posts",
             "/post",
-            "/post/edit",
-            "/about",
             "/photos",
             "/cv",
-            "/milestones"
+            "/website"
     })
     public String index() {
         return "index";

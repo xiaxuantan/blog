@@ -5,9 +5,9 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import Navigation from './navigation'
 import Post from './post'
 import PostList from './post-list'
-import Home from './home'
+import About from './about'
 import Footer from "./footer"
-import Milestone from './milestone'
+import Website from './website'
 
 
 import 'bootstrap/dist/css/bootstrap.css'
@@ -24,10 +24,10 @@ const App = () => (
 
 const Content = () => (
     <Switch>
-        <Route exact path='/' component={Home}/>
+        <Route exact path='/' component={About}/>
         <Route path='/posts' component={PostList}/>
         <Route exact path='/post' component={Post}/>
-        <Route path='/milestones' component={Milestone}/>
+        <Route path='/website' component={Website}/>
     </Switch>
 );
 

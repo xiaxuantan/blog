@@ -1,10 +1,11 @@
 import React from 'react'
 import Markdown from './markdown'
+import {Row} from "react-bootstrap";
 
 
-const milestones = `
+const website = `
 
-# Milestones
+# Website
 
 ---
 
@@ -23,21 +24,16 @@ const milestones = `
 `;
 
 
-class Milestone extends React.Component {
+class Website extends React.Component {
 
     render() {
         return (
-            <div className="container">
-                <div className="row">
-                    <div className="col-md-offset-2 col-md-8">
-                        <Markdown source={milestones}/>
-                    </div>
-                </div>
-            </div>
+            <Row noGutters>
+                <Markdown source={website}/>
+            </Row>
         )
     }
-
 }
 
 
-export default Milestone
+export default Website

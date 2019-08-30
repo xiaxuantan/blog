@@ -2,12 +2,12 @@ import React from 'react'
 
 import {Jumbotron, Button} from 'react-bootstrap'
 
-const Home = () => (
-    <div >
+const About = () => (
+    <div>
         <Jumbotron>
             <h1>Welcome!</h1>
             <p>
-                I am Xiaxuan (Peter) Tan. I am a junior software engineer.
+                I am Xiaxuan Tan. I am currently a master student at University of Southern California.
                 I have a broad range of professional interests including back-end development, front-end
                 development, DevOps, distributed system and big data.
             </p>
@@ -20,10 +20,10 @@ const Home = () => (
                 I hope it would be a good place for all you guys to know more about me.
             </p>
             <p>
-                <Button bsStyle="primary" href="/milestones">See milestones</Button>
+                <Button variant="outline-primary" href="/website">See website design</Button>
             </p>
         </Jumbotron>
     </div>
 );
 
-export default Home
+export default About
