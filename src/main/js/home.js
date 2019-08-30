@@ -3,7 +3,7 @@ import React from 'react'
 import {Jumbotron, Button} from 'react-bootstrap'
 
 const Home = () => (
-    <div className="container content">
+    <div >
         <Jumbotron>
             <h1>Welcome!</h1>
             <p>
