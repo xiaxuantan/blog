@@ -1,5 +1,6 @@
 import React from 'react'
 import Markdown from './markdown'
+import {Card, Row} from "react-bootstrap";
 
 const qs = require('query-string');
 
@@ -7,7 +8,7 @@ class Post extends React.Component {
 
     constructor(props) {
         super(props);
-        let templateBody = "**Fetching and rendering document. Please wait...**";
+        let templateBody = "";
         this.state = {post: null, body: templateBody};
         this.queryParams = qs.parse(this.props.location.search)
     }
@@ -34,13 +35,22 @@ class Post extends React.Component {
 
     render() {
         return (
-            <div className="container">
-                <div className="row">
-                    <div className="col-xs-8 col-md-8">
+            <Card bg="light" className="border-0">
+                <Card.Header>
+                    <h1>{this.state.post ? this.state.post.title : "Fetching and rendering..."}</h1>
+                    <p className="m-0 text-muted font-italic">
+                        Published On: {this.state.post ? this.state.post.lastModifiedTime : ""}
+                    </p>
+                    <p className="m-0 text-muted font-italic">
+                        Last Modified On: {this.state.post ? this.state.post.publishedTime : ""}
+                    </p>
+                </Card.Header>
+                <Card.Body>
+                    <Card.Text>
                         <Markdown source={this.state.body}/>
-                    </div>
-                </div>
-            </div>
+                    </Card.Text>
+                </Card.Body>
+            </Card>
         )
     }
 }

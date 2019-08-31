@@ -4,7 +4,7 @@ let highlight = require('highlight.js');
 let emoji = require('markdown-it-emoji');
 let md = require('markdown-it')({
     highlight: function (str, lang) {
-        if (lang && hljs.getLanguage(lang)) {
+        if (lang && highlight.getLanguage(lang)) {
             try {
                 return '<pre class="hljs"><code>' +
                     highlight.highlight(lang, str, true).value +
@@ -24,7 +24,7 @@ class Markdown extends React.Component {
 
     render() {
         let text = md.render(this.props.source);
-            // .replace('<table>', '<table class="table table-striped">');
+        // .replace('<table>', '<table class="table table-striped">');
         return (
             <div dangerouslySetInnerHTML={{__html: text}}>
             </div>

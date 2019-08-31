@@ -11,3 +11,4 @@ CREATE TABLE IF NOT EXISTS blog_post (
   bodyKey VARCHAR(255) NOT NULL,
   PRIMARY KEY (postId)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+Terminal close -- exit!
