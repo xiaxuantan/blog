@@ -30,20 +30,18 @@ class PostList extends React.Component {
             <PostListItem postListItem={postListItem}/>
         );
         return (
-            <div className="container">
-                <Table striped responsive hover>
-                    <thead>
-                    <tr className="row">
-                        <th className="col-xs-8 col-md-8">Title</th>
-                        <th className="col-xs-2 col-md-2">Published Time</th>
-                        <th className="col-xs-2 col-md-2">Last Modified</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {postListItems}
-                    </tbody>
-                </Table>
-            </div>
+            <Table striped responsive hover>
+                <thead>
+                <tr className="row m-0">
+                    <th className="col-xs-8 col-md-8">Title</th>
+                    <th className="col-xs-2 col-md-2">Published Time</th>
+                    <th className="col-xs-2 col-md-2">Last Modified</th>
+                </tr>
+                </thead>
+                <tbody>
+                {postListItems}
+                </tbody>
+            </Table>
         )
     }
 }
@@ -53,7 +51,7 @@ class PostListItem extends React.Component {
     render() {
         let dest = '/post?id=';
         return (
-            <tr className="row">
+            <tr className="row m-0">
                 <td className="col-xs-8 col-md-8">
                     <Link to={dest + this.props.postListItem.postId}>
                         {this.props.postListItem.title}

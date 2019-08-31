@@ -1,6 +1,7 @@
 import React from 'react'
 import Markdown from './markdown'
 import {Row} from "react-bootstrap";
+import Col from "react-bootstrap/Col";
 
 
 const website = `
@@ -28,8 +29,10 @@ class Website extends React.Component {
 
     render() {
         return (
-            <Row noGutters>
-                <Markdown source={website}/>
+            <Row noGutters md="auto">
+                <Col noGutters>
+                    <Markdown source={website}/>
+                </Col>
             </Row>
         )
     }
