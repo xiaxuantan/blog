@@ -11,7 +11,7 @@ const website = `
 ### Tech stack
 
 - Backend stack: JavaWeb (SpringBoot, SpringMVC, Spring, MyBatis)
-- Frontend stack: ReactJS, Redux, Webpack
+- Frontend stack: ReactJS, Redux, Webpack, Bootstrap 4
 - Storage: AWS S3, Mysql
 
 ### References:

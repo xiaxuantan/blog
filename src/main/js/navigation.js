@@ -3,7 +3,7 @@ import {Navbar, Nav} from "react-bootstrap";
 
 const Navigation = () => (
     <Navbar bg="dark" variant="dark">
-        <Navbar.Brand href="/">Home</Navbar.Brand>
+        <Navbar.Brand href="/">About</Navbar.Brand>
         <Nav className="mr-auto">
             <Nav.Link href="/posts">Posts</Nav.Link>
             <Nav.Link href="/photos">Photos</Nav.Link>
