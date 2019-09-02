@@ -16,12 +16,14 @@ CREATE TABLE IF NOT EXISTS blog_post
 
 CREATE TABLE IF NOT EXISTS blog_comment
 (
+    commentId     INT AUTO_INCREMENT,
     postId        INT,
     email         VARCHAR(255) NOT NULL,
     commentedTime DATETIME     NOT NULL,
     content       VARCHAR(255) NOT NULL,
     up            INT DEFAULT 0,
     down          INT DEFAULT 0,
-    FOREIGN KEY (postId) REFERENCES blog_post (postId) ON DELETE CASCADE
+    FOREIGN KEY (postId) REFERENCES blog_post (postId) ON DELETE CASCADE,
+    PRIMARY KEY (commentId)
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8;

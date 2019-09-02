@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import java.time.LocalDateTime;
 
 public class Comment {
+    private int commentId;
     private int postId;
     private String email;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
@@ -13,16 +14,12 @@ public class Comment {
     private int up;
     private int down;
 
-    @Override
-    public String toString() {
-        return "Comment{" +
-                "postId=" + postId +
-                ", email='" + email + '\'' +
-                ", commentedTime=" + commentedTime +
-                ", content='" + content + '\'' +
-                ", up=" + up +
-                ", down=" + down +
-                '}';
+    public int getCommentId() {
+        return commentId;
+    }
+
+    public void setCommentId(int commentId) {
+        this.commentId = commentId;
     }
 
     public int getPostId() {
@@ -71,5 +68,18 @@ public class Comment {
 
     public void setDown(int down) {
         this.down = down;
+    }
+
+    @Override
+    public String toString() {
+        return "Comment{" +
+                "commentId=" + commentId +
+                ", postId=" + postId +
+                ", email='" + email + '\'' +
+                ", commentedTime=" + commentedTime +
+                ", content='" + content + '\'' +
+                ", up=" + up +
+                ", down=" + down +
+                '}';
     }
 }
