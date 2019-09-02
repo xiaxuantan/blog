@@ -23,6 +23,7 @@ public class PostMapperTests {
     private String testTitle = "My Test Post";
     private LocalDateTime testPostTime = LocalDateTime.now();
     private String testBodyKey = "posts/test.md";
+    private int testPageCount = 100;
 
     private static int testPostId;
 
@@ -33,6 +34,7 @@ public class PostMapperTests {
         post.setPublishedTime(testPostTime);
         post.setLastModifiedTime(testPostTime);
         post.setBodyKey(testBodyKey);
+        post.setPageCount(testPageCount);
         postMapper.insertPost(post);
         testPostId = post.getPostId();
     }
@@ -43,6 +45,7 @@ public class PostMapperTests {
         Assert.assertEquals(post.getLastModifiedTime(), post.getPublishedTime());
         Assert.assertEquals(post.getTitle(), testTitle);
         Assert.assertEquals(post.getBodyKey(), testBodyKey);
+        Assert.assertEquals(post.getPageCount(), testPageCount);
         Assert.assertTrue(post.isVisible());
     }
 

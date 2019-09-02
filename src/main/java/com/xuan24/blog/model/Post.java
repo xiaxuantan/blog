@@ -12,6 +12,15 @@ public class Post {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime lastModifiedTime;
     private String bodyKey;
+    private int pageCount;
+
+    public int getPageCount() {
+        return pageCount;
+    }
+
+    public void setPageCount(int pageCount) {
+        this.pageCount = pageCount;
+    }
 
     @Override
     public String toString() {
@@ -21,6 +30,7 @@ public class Post {
                 ", publishedTime=" + publishedTime +
                 ", lastModifiedTime=" + lastModifiedTime +
                 ", bodyKey='" + bodyKey + '\'' +
+                ", pageCount=" + pageCount +
                 ", visible=" + visible +
                 '}';
     }

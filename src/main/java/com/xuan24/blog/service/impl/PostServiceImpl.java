@@ -25,13 +25,16 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public List<Post> getPostByPage(int page) {
-        int offset = page == 0 ? 0 : (page -1) * 10;
+        int offset = page == 0 ? 0 : (page - 1) * 10;
         int size = 20;
         return postMapper.getPostsByPage(offset, size);
     }
 
     @Override
     public Post findPostById(int postId) {
-        return postMapper.findPostById(postId);
+        Post post = postMapper.findPostById(postId);
+        post.setPageCount(post.getPageCount() + 1);
+        postMapper.updatePost(post);
+        return post;
     }
 }

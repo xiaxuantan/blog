@@ -12,16 +12,18 @@ public interface PostMapper {
             "title," +
             "publishedTime," +
             "bodyKey," +
+            "pageCount," +
             "lastModifiedTime) VALUES (" +
             "#{title}," +
             "#{publishedTime}," +
             "#{bodyKey}," +
+            "#{pageCount}," +
             "#{lastModifiedTime})")
     @Options(useGeneratedKeys=true, keyProperty="postId")
     void insertPost(Post post);
 
     @Update("UPDATE blog_post SET title=#{title}, lastModifiedTime=#{lastModifiedTime}, " +
-            "visible=#{visible} WHERE postId=#{postId}")
+            "visible=#{visible}, pageCount=#{pageCount} WHERE postId=#{postId}")
     void updatePost(Post post);
 
     @Select("SELECT * FROM blog_post WHERE postId = #{postId}")
