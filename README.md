@@ -1,4 +1,10 @@
-# blog
+# Blog
+
+### Use cases:
+
+- Admin can manully upload posts (by modifying MYSQL and AWS S3)
+- Guests can view posts
+- Guests can make comments on posts and evaluate comments from others
 
 ### Tech stack
 
@@ -21,4 +27,3 @@ sudo java -jar ***.jar --spring.profiles.active=prod >/dev/null 2>&1 &
 - [Bootstrap 4 with React](https://react-bootstrap.netlify.com/)
 
 - [Install Java 12 on Ubuntu](https://www.linuxuprising.com/2019/03/how-to-install-oracle-java-12-jdk-12-in.html)
-

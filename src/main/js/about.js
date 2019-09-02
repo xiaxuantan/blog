@@ -15,7 +15,8 @@ const About = () => (
             Recently, I've been extremely fond of writing and body building.
         </p>
         <p>
-            This site is still under construction.
+            This site is still under construction. More functions are expected to finish in a few days. More posts
+            will be available soon.
             I hope it would be a good place for all you guys to know more about me.
         </p>
         <p>
