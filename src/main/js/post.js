@@ -44,6 +44,9 @@ class Post extends React.Component {
                     <p className="m-0 text-muted font-italic">
                         Last Modified On: {this.state.post ? this.state.post.publishedTime : ""}
                     </p>
+                    <p className="m-0 text-muted font-italic">
+                        Viewed count: {this.state.post ? this.state.post.pageCount : ""}
+                    </p>
                 </Card.Header>
                 <Card.Body>
                     <Card.Text>

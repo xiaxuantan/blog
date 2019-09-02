@@ -13,3 +13,15 @@ CREATE TABLE IF NOT EXISTS blog_post
     PRIMARY KEY (postId)
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
+
+CREATE TABLE IF NOT EXISTS blog_comment
+(
+    postId        INT,
+    email         VARCHAR(255) NOT NULL,
+    commentedTime DATETIME     NOT NULL,
+    content       VARCHAR(255) NOT NULL,
+    up            INT DEFAULT 0,
+    down          INT DEFAULT 0,
+    FOREIGN KEY (postId) REFERENCES blog_post (postId) ON DELETE CASCADE
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8;
